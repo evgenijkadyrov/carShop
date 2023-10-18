@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test\" && exit 1"
+    "server": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "Evg",
   "license": "ISC",
@@ -16,7 +17,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "eslint": "^8.51.0",
+    "eslint": "8.22.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",

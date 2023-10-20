@@ -1,4 +1,5 @@
 export const paths={
     home: '/',
-    car: '/car'
+    car: '/car',
+    createCar: '/car/add'
 }

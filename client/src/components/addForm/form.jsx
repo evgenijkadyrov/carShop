@@ -6,6 +6,8 @@ import {useDispatch} from "react-redux";
 import {createCar} from "../../features/carSlice.js";
 import {useNavigate} from "react-router-dom";
 import {paths} from "../../paths.js";
+import {InputForm} from "./inputForm.jsx";
+
 
 export const Form = () => {
     const dispatch = useDispatch()
@@ -31,44 +33,18 @@ export const Form = () => {
     return (
         <ContentWrapper>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-                <label className={styles.field}> Car name
-                    <input {...register("name", {required: true, maxLength: 15})}
-                           placeholder={'name car'} className={styles.input}
-                           aria-invalid={errors.name ? "true" : "false"}
-                    />
-                    {errors.name?.type === "required" && (
-                        <p role="alert" style={{color: 'red'}}>Name is required</p>
-                    )}
-                </label>
-                <label>Car price
-                    <input {...register("price", {required: true, maxLength: 15})}
-                           placeholder={'price'} className={styles.input}
-                           aria-invalid={errors.price ? "true" : "false"}/>
-                    {errors.price?.type === "required" && (
-                        <p role="alert" style={{color: 'red'}}>Price is required</p>)}
-                </label>
-                <label>Car description
+                <InputForm label={'Car name'} placeholder={'name car'} name={'name'}
+                           register={register} errors={errors} max={12} min={3}/>
+                <InputForm label={'Car price'} placeholder={'car price'} name={'price'}
+                           register={register} errors={errors} max={7}/>
 
-                    <textarea {...register("description", {
-                        required: true,
-                        minLength: 20
-                    })} placeholder={'description'} className={styles.input}
-                              aria-invalid={errors.description ? "true" : "false"}/>
-                    {errors.description?.type === "required" && (
-                        <p role="alert" style={{color: 'red'}}>Description is
-                            required</p>)}
-                    {errors.description?.type === "minLength" && (
-                        <p role="alert" style={{color: 'red'}}>Description is
-                            less then 20 symbols</p>)}
-                </label>
-                <label> Car capacity
+                <InputForm label={'Car description'} placeholder={'Car description'}
+                           name={'description'} register={register} errors={errors}
+                           min={20} type={'textarea'}/>
 
-                    <input {...register("capacity", {required: true})}
-                           placeholder={'capacity'} className={styles.input}
-                           aria-invalid={errors.capacity ? "true" : "false"}/>
-                    {errors.capacity?.type === "required" && (
-                        <p role="alert" style={{color: 'red'}}>Capacity is required</p>)}
-                </label>
+                <InputForm label={'Car capacity'} placeholder={'Car capacity'}
+                           name={'capacity'} register={register} errors={errors}/>
+
                 <label> Car image
                     <Controller name={"image"} control={control}
                                 render={({field: {value, onChange, ...field}}) => {

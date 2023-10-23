@@ -4,6 +4,7 @@ import {Home} from "./pages/home/home.jsx";
 import { paths} from "./paths.js";
 import {Car} from "./pages/car/car";
 import {CarCreate} from "./pages/carCreate/carCreate.jsx";
+import {Order} from "./pages/order/index.js";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
             <Route path={paths.home} element={<Home/>}/>
             <Route path={`${paths.car}/:id`} element={<Car/>}/>
             <Route path={paths.createCar} element={<CarCreate/>}/>
+            <Route path={paths.order} element={<Order/>}/>
 
         </Routes>
 

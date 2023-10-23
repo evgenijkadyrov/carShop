@@ -4,7 +4,7 @@ Server built with Express.js, Mongodb.
 Client built with React+Vite.
 ## Readme.me
 The repository contains the source code for an rent car shop, consisting of next pages: the homepage with all cars, cingle car page withi discription, create new car page and order page.
-![Car Shop Logo](./src/assets/Screenshot_1.png)
+![Car Shop Logo](./client/src/assets/Screenshot_1.png)
 
 ## Features
 The car shop web application includes the following features:
